@@ -1,0 +1,89 @@
+
+<div class="details-body">
+<div class="details-container">
+    <div  class="details-heading">
+    <h1>
+        <span><%= job.tech %></span> Opportunity
+    </h1>
+</div>
+    <div class="details-icons">
+      <% if(locals.userEmail) { %>
+        <button type="button"  class="btn btn-outline-warning">Actively Hiring</button>
+       
+        <a href="/update-jobs/<%= job.id %>"> <span><img src="../../images/edit.png"></span></a>
+        <a href="/delete-job/<%= job.id %>"  onclick="deleteJob('<%= job.id %>')"><span><img src="../../images/delete.png"></span></a> 
+        <% } %>
+      </div>
+  
+    <div class="company-name">
+       <h4><%= job.name %></h4>
+        <span ><%= job.category %></span>
+        <span class="details-tech"><%= job.tech %></span>
+    </div>
+    <div class="details-content">
+        <span><img src="../../images/map.png"><%= job.location %></span><br>
+        <span><img src="../../images/rupee.png"><%= job.salary %> LPA</span><br>
+        <span><img src="../../images/timer.png">Apply By :  <%= job.date %></span><br>
+        <span><img src="../../images/number.png">Number of Openings :  <%= job.openings %></span><br>
+
+        <% if(locals.userEmail) { %>
+        <a href="/applicants"><span><img src="../../images/applicant.png">View Applicants</span></a>
+        <% } %>
+
+    </div>
+    <div class="details-skills">
+      <% jobs.skills?.forEach(skill =>{ %>
+        <button type="button" class="btn btn-outline-primary btn-sm ">  <%= skill %> </button>
+        <% }) %>
+    </div>
+     
+    <div class="apply-btn">  
+        <a href="apply" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" class="btn btn-primary">Apply Now</a>
+       </div>
+ 
+       <div class="details-time-btn">
+          <% if(locals.lastVisit) { %>
+           <button type="button" class="btn btn-outline-success btn-sm">
+            Posted: <%= locals.lastVisit %>
+          </button> 
+            <% } %>     
+        </div>
+
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Apply Now Here</h1>
+                  
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="/applied" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                          <label for="name" class="col-form-label">Name</label>
+                          <input type="text" class="form-control" id="applicantname" name="applicantname">
+                        </div>
+                        <div class="mb-3">
+                          <label for="email" class="col-form-label">Email Id</label>
+                          <input type="text" class="form-control" id="emailid" name="emailid">
+                        </div>
+                        <div class="mb-3">
+                          <label for="contact" class="col-form-label">Contact</label>
+                          <input type="tel" class="form-control" id="applicantcontact" name="applicantcontact">
+                        </div>
+                        <div class="mb-3">
+                          <label for="resume" class="col-form-label">Resume</label>
+                          <input type="file" class="form-control" id="resume" accept="resume/pdf" name="resume">
+                        </div>
+                        <button type="submit" class="btn btn-success ">Apply</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-secondary" data-bs-dismiss="modal" >Close</button>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+</div>
+</div>

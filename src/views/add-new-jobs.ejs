@@ -1,0 +1,78 @@
+<%if(errorMessage){%>
+  <div class="alert alert-danger" role="alert">
+    <%=errorMessage%>
+  </div>
+<%}%>
+<div class="mt-5 mb-2 job-form">
+     
+    <form action="/jobs" method="post">
+  
+    <h2>Post A New Job</h2>
+    
+
+    <div class="mb-3">
+    <select class="form-select" name="category"  aria-label="select example" >
+        <option selected disabled>Select Job Category</option>
+        <option value="Tech">Tech</option>
+        <option value="Non-Tech">Non-Tech</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+    <select class="form-select" name="tech" aria-label="select example" >
+        <option selected disabled>Select Job Designation</option>
+        <option value="SDE-1">SDE-1</option>
+        <option value="SDE-2">SDE-2</option>
+        <option value="HR">HR</option>
+        <option value="MEAN Developer">MEAN Developer</option>
+        <option value="MERN Developer">MERN Developer</option>
+        <option value="Full-Stack Developer">Full-Stack Developer</option>
+        <option value="Front-End Developer">Front-End Developer</option>
+        <option value="Back-End Developer">Back-End Developer</option>
+        <option value="Java Developer">Java Developer</option>
+        <option value="Python Developer">Python Developer</option>
+        <option value="DevOps Engineer">DevOps Engineer</option>
+      </select>
+    </div>
+        <div class="mb-3"> 
+            <input type="text" class="form-control" id="company" name="company" placeholder="Enter Comapny Name" >
+        </div>
+        
+        <div class="mb-3">
+          <input type="text" class="form-control" id="location" name="location" placeholder="Enter Job Location">
+          </div>
+
+
+        <div class="mb-3">
+            <input type="text" class="form-control" id="salary" name="salary" placeholder="Enter Salary " required> 
+        </div>
+
+        <div class="mb-3"> 
+            <input type="number" class="form-control" id="openings" name="openings" placeholder="Total Vacancies "> 
+        </div>
+
+          <div class="mb-3">
+            <select class="form-select" name="skills" aria-label="select example" multiple >
+                <option selected disabled>Select Skills Required For This Job</option>
+                <option value="React">React</option>
+                <option value="NodeJs">NodeJs</option>
+                <option value="Angular">Angular</option>
+                <option value="Express">Express</option>
+                <option value="MongoDB">MongoDB</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="SpringBoot">SpringBoot</option>
+                <option value="Python">Python</option>
+                <option value="DS & Algo">DS & Algo</option>
+              </select>
+          </div>
+
+            <div class="mb-3">      
+                <input type="date" class="form-control" id="date" name="date" placeholder="Apply By"> 
+            </div>
+         
+      <button type="submit" class="btn btn-success">Add Job</button>
+    </form>
+  </div>
+  
+  

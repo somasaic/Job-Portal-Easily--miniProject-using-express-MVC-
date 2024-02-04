@@ -1,0 +1,52 @@
+<div class="my-container">
+    <div class="main">
+      <h1 class="heading">A Robust platform for reliable</h1>
+      <h2 class="sub-heading">Job opportunities and internships.</h2>
+      <p>Get Discovered. Get Hired.</p>
+     
+      <a href="./jobs" class="btn btn-warning btn-lg home-btn">I'm A JobSeeker</a>
+    
+      <button class="btn btn-warning btn-lg home-btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">I'm A Recruiter</button>
+    
+    </div>
+    <div class="img-section">
+      <img src="../../images/hiring.jpg">
+    </div>
+
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Register</h1>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form action="/register" method="post">
+            <div class="mb-3">
+              <label for="name" class="col-form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="col-form-label">Email Id</label>
+              <input type="text" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="col-form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary ">Register</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+         <p>Already Registered?</p>
+         <a href="login" class="btn btn-primary ">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

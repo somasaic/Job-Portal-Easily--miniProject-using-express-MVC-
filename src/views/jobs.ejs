@@ -1,0 +1,65 @@
+<!-- <div class="jobs-section">
+    <div class="jobs-container row">
+      <% job.forEach(job =>{ %>
+      <div class="jobs-card">
+        <div class="card-body">
+          <span hidden><%= job.id %></span>
+          <p class="active-hiring">Actively Hiring</p>
+          <h4 class="card-title"><%= job.name %></h4>
+          <p class="card-text category"><%= job.category %> <span class="tech"><%=job.tech %></span></p>
+          <h6 class="card-location"><img src="../../images/map.png"><%=job.location %></h6>
+          <p class="card-text"><img src="../../images/rupee.png"><%=job.salary %> LPA</p>
+  
+          <% job.skills?.forEach(skill =>{ %>
+          <button type="button" class="btn btn-outline-primary btn-sm">
+            <%= skill %>
+          </button>
+          <% }) %>
+          <a
+          href="/details/<%= job.id %>" 
+            class="btn btn-outline-success"
+            style="
+              --bs-btn-padding-y: 0.3rem;
+              --bs-btn-padding-x: 5.8rem;
+              --bs-btn-font-size: 1rem;
+            "
+          >
+            View Details
+          </a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div> -->
+
+  <div class="jobs-section">
+    <div class="jobs-container row">
+        <% job.forEach(job => { %>
+            <div class="jobs-card">
+                <div class="card-body">
+                    <span hidden><%= job.id %></span>
+                    <p class="active-hiring">Actively Hiring</p>
+                    <h4 class="card-title"><%= job.company %></h4>
+                    <p class="card-text category"><%= job.category %> <span class="tech"><%= job.tech %></span></p>
+                    <h6 class="card-location"><img src="../../images/map.png"><%= job.location %></h6>
+                    <p class="card-text"><img src="../../images/rupee.png"><%= job.salary %> LPA</p>
+
+                    <% if (job.skills && Array.isArray(job.skills)) { %>
+                        <% job.skills.forEach(skill => { %>
+                            <button type="button" class="btn btn-outline-primary btn-sm">
+                                <%= skill %>
+                            </button>
+                        <% }); %>
+                    <% } %>
+
+                    <a href="/details/<%= job.id %>" class="btn btn-outline-success" style="--bs-btn-padding-y: 0.3rem; --bs-btn-padding-x: 5.8rem; --bs-btn-font-size: 1rem;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+
+  
